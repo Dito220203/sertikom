@@ -58,24 +58,27 @@ $(document).ready(function() {
 	}
 </script>
 <script>
-	function hapus(url) {
-		Swal.fire({
-			title: 'Apakah Anda yakin?',
-			text: "Data yang dihapus tidak dapat dikembalikan!",
-			icon: 'warning',
-			showCancelButton: true,
-			confirmButtonColor: '#d33',
-			cancelButtonColor: '#3085d6',
-			confirmButtonText: 'Ya, hapus!',
-			cancelButtonText: 'Batal'
-		}).then((result) => {
-			if (result.isConfirmed) {
-				// Jika user klik "Ya", arahkan ke URL hapus
-				window.location.href = url;
-			}
-		});
-	}
-</script>
+    function hapus(url) {
+        Swal.fire({
+            title: 'Apakah Anda yakin?',
+            text: "Data yang dihapus tidak dapat dikembalikan!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Ya, hapus!',
+            cancelButtonText: 'Batal'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = url;
+
+            }
+
+        });
+
+    }
+
+</script> 
 </body>
 
 </html>

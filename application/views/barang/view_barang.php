@@ -112,7 +112,7 @@
 											<i class="bi bi-pencil-square"></i>
 										</a>
 										<button type="button" class="btn btn-sm btn-outline-danger border-0"
-											onclick="hapus('<?= base_url('barang/hapus_barang/' . $item['id_barang']) ?>')">
+											onclick="HapusBarang('<?= base_url('barang/hapus_barang/' . $item['id_barang']) ?>', '<?= $item['nama_barang'] ?>')">
 											<i class="bi bi-trash"></i>
 										</button>
 									</td>
@@ -222,3 +222,22 @@
 		</div>
 	</div>
 </div>
+<script>
+    function HapusBarang(url, nama_barang) {
+        Swal.fire({
+            title: 'Apakah Anda yakin?',
+            // Kita masukkan nama barang ke dalam text
+            text: "Data " + nama_barang + " akan dihapus secara permanen dari sistem. Tindakan ini tidak dapat dibatalkan.",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Ya, hapus!',
+            cancelButtonText: 'Batal'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = url;
+            }
+        });
+    }
+</script>
